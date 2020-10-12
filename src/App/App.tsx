@@ -132,14 +132,10 @@ const PNLChartTooltip = React.memo((tooltipData: PvNHover<PnLData>) => {
 		top: tooltipData.top
 	};
 
-	const innerStyles: React.CSSProperties = {
-
-	};
-
 	return (
 		<div className="tooltipContainer" style={tooltipStyles}>
 			{tooltipData.data &&
-				<div className="tooltipInner" style={innerStyles}>
+				<div className="tooltipInner">
 					<div style={{ fontWeight: "bold" }}>{tooltipData.data.ticker}</div>
 					<div>Sizing: {formatWithSIPrefix(tooltipData.data.size)}</div>
 					<div>PL: {formatWithSIPrefix(tooltipData.data.pL)}</div>
@@ -154,18 +150,11 @@ export const App = ({ }) => {
 	const [pvnChartData, setPvnChartData] = useState<PvNRow<PnLData>[]>(generatePvNData());
 
 	return (
-		<div className="app">
-			<div className="charts">
-				<div className="dummy">
-					<button onClick={() => setPvnChartData(generatePvNData())}>Touch me</button>
-					{/* <button onClick={() => setRoseChartData(generateHitRateData())}>Touch me</button> */}
-				</div>
-				<div className="title">Ok Boomer</div>
-				<div className="aisha">
-					<PvNChart rows={pvnChartData} barHeight={18} Tooltip={PNLChartTooltip} />
-				</div>
-				{/* <RoseChart data={roseChartData} boundaries={boundaries} onHover={onHover} boundaryLabelYOffset={8} /> */}
-			</div>
+		<div className="charts">
+			<button onClick={() => setPvnChartData(generatePvNData())}>Generate P v N Data</button>
+			<PvNChart rows={pvnChartData} barHeight={16} Tooltip={PNLChartTooltip} rowPadding={5} />
+			<button onClick={() => setRoseChartData(generateHitRateData())}>Generate Hit Rate Data</button>
+			<RoseChart data={roseChartData} boundaries={boundaries} onHover={console.log} boundaryLabelYOffset={8} />
 		</div>
 	);
 };

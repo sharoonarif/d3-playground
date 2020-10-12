@@ -1,14 +1,14 @@
 {
   "name": "d3-playground",
   "version": "1.0.0",
-  "description": "Tryna remember how to use d3",
+  "description": "Playground for creating/testing d3 powered compenents in React/TS",
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch",
     "build": "rimraf dist && webpack -p"
   },
-  "author": "Rooooooney",
-  "license": "ISC",
+  "author": "Sharoon Arif",
+  "license": "MIT",
   "dependencies": {
     "@types/react-transition-group": "^2.0.15",
     "d3": "^5.7.0",
