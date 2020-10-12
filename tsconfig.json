@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "bin",
+		"rootDir": "./src",
+		"jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+    "noUnusedLocals": false,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/Typings"
+    ],
+    "types": [
+      "node"
+    ],
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+  ],
+  "compileOnSave": true
+}

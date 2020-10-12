@@ -1,0 +1,229 @@
+body {
+	margin: 2px 10px;
+	background-color: #1a1d24;
+	color: white;
+	font-family: 'Inconsolata', monospace;
+}
+
+#root {
+	text-align: center;
+}
+
+.charts {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	padding: 20px;
+}
+
+.roseChartContainer {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	max-width: 800px;
+	max-height: 800px;
+}
+
+.bubbleChartContainer,
+.pvnChart,
+.roseChartContainer {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.bubbleChartContainer svg,
+.roseChartContainer svg {
+	width: 100%;
+	height: 100%;
+}
+
+.boundaries circle {
+	fill: none;
+	stroke: gray;
+	opacity: 0.1;
+}
+.boundaries circle:last-of-type {
+	opacity: 0.2;
+	stroke: white;
+}
+
+.boundaryLabels div {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+}
+
+.boundaryLabels div span {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 1px 4px;
+	font-size: 12px;
+	border-radius: 2px;
+}
+
+.sliceLabels div {
+	display: flex;
+	align-items: center;
+}
+
+.sliceLabels span {
+			text-overflow: ellipsis;
+			overflow: hidden;
+	}
+
+.sliceLabels span,
+.sliceLabels div {
+	position: absolute;
+}
+
+.sliceSections line {
+	stroke: white;
+	opacity: 0.7;
+	stroke-dasharray: 2px;
+}
+
+.slices path {
+	shape-rendering: auto;
+}
+
+.slice {
+	fill: #0b80b3;
+	opacity: 0.5;
+	transition: opacity 0.2s;
+}
+
+.slice:hover {
+	opacity: 1;
+}
+
+.title {
+	margin-bottom: 12px;
+}
+
+.dummy {
+	width: 100%;
+	height: 60px;
+	background: orange;
+	border: 3px solid darkorange;
+	margin-bottom: 20px;
+}
+
+button {
+	color: black;
+	border: none;
+	font-size: 20px;
+	background: transparent;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+}
+
+button:active,
+button:focus {
+	outline: 0;
+}
+
+.pvnRows .pvnRow {
+	position: absolute;
+	box-sizing: border-box;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.pvnRows .pvnRow:first-of-type {
+	border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.pvnRows .pvnRow .bar {
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.positiveBar {
+	background-color: green;
+	border-right: 1px solid black;
+}
+
+.negativeBar {
+	background-color: red;
+	border-left: 1px solid black;
+}
+
+.zeroLine {
+	left: calc(50% - 0.5px);
+	position: absolute;
+	width: 0px;
+	border-right: 1px dashed white;
+	transition: height 0.25s;
+}
+
+.pvnChartContainer {
+	display: flex;
+	width: 100%;
+	margin-right: 50px;
+	position: relative;
+}
+
+.pvnChartContainer .labels {
+	flex: 0.5;
+	max-width: 200px;
+	margin-right: 8px;
+	position: relative;
+}
+
+.pvnChartContainer .labels .label {
+	position: absolute;
+	text-align: right;
+	width: 100%;
+	white-space: pre;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.pvnChart {
+	flex: 3;
+}
+
+.gridlines .gridline {
+	position: absolute;
+	width: 0;
+	border-right: 1px dashed gray;
+	opacity: 0.25;
+}
+
+.tickLabels .tickLabel {
+	position: absolute;
+	font-size: 12px;
+	color: #eee;
+	text-align: center;
+}
+
+.aisha {
+	position: relative;
+}
+
+.tooltipContainer {
+	position: absolute;
+	transition: all 0.2s;
+	pointer-events: none;
+}
+
+.tooltipInner {
+	display: flex;
+	flex-flow: column;
+	padding: 8px;
+	background-color: rgba(0, 0, 0, 0.8);
+	pointer-events: none;
+	font-size: 12px;
+	border-radius: 3px;
+	align-items: flex-start;
+}
+
+.tooltipInner div:not(:last-of-type) {
+	margin-bottom: 4px;
+}
